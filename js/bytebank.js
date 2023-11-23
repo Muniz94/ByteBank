@@ -14,4 +14,8 @@ elementoFormulario.addEventListener ("submit", function(event) {
   const inputTipoTransacao = elementoFormulario.querySelector('#tipoTransacao');
   const inputValor = elementoFormulario.querySelector('#valor');
   const inputData = elementoFormulario.querySelector('#data');
+
+  let tipoTransacao = inputTipoTransacao.value;
+  let valor = inputValor.value;
+  let data = inputData.value;
 })
