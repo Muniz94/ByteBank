@@ -24,4 +24,6 @@ elementoFormulario.addEventListener ("submit", function(event) {
     valor: valor,
     data: data
   }
+
+  elementoFormulario.reset();
 })
