@@ -1,7 +1,10 @@
 let saldo = 3000;
 
-const elementoSaldo = document.querySelector(".saldo-valor .valor");
-elementoSaldo.textContent = saldo;
+const elementoSaldo = document.querySelector(".saldo-valor .valor") as HTMLElement;
+if (elementoSaldo){ // diferente de null
+  elementoSaldo.textContent = saldo.toString();
+}
+
 
 const elementoFormulario = document.querySelector(".block-nova-transacao form");
 elementoFormulario.addEventListener ("submit", function(event) {
@@ -16,7 +19,7 @@ elementoFormulario.addEventListener ("submit", function(event) {
   const inputData = elementoFormulario.querySelector('#data');
 
   let tipoTransacao = inputTipoTransacao.value;
-  let valor = inputValor.value;
+  let valor = inputValor.value; // os inputs.value são strings por isso deve-se converter
   let data = inputData.value;
 
   if (tipoTransacao == "Depósito") {
