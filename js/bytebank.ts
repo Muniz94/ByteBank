@@ -18,9 +18,9 @@ elementoFormulario.addEventListener ("submit", function(event) {
   const inputValor = elementoFormulario.querySelector('#valor') as HTMLInputElement;
   const inputData = elementoFormulario.querySelector('#data') as HTMLInputElement;
 
-  let tipoTransacao = inputTipoTransacao.value;
-  let valor = inputValor.value; // os inputs.value são strings por isso deve-se converter
-  let data = inputData.value;
+  let tipoTransacao: string = inputTipoTransacao.value;
+  let valor: number = inputValor.valueAsNumber; // os inputs.value são strings por isso deve-se converter
+  let data: Date = new Date(inputData.value);
 
   if (tipoTransacao == "Depósito") {
     saldo += valor; // aqui tem que converter para não concatenar ao invés de somar
