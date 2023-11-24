@@ -18,4 +18,10 @@ elementoFormulario.addEventListener ("submit", function(event) {
   let tipoTransacao = inputTipoTransacao.value;
   let valor = inputValor.value;
   let data = inputData.value;
+
+  const novaTransacao = {
+    tipoTransacao: tipoTransacao,
+    valor: valor,
+    data: data
+  }
 })
