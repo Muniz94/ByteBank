@@ -31,7 +31,7 @@ elementoFormulario.addEventListener ("submit", function(event) {
     return;
   }
 
-  elementoSaldo.textContent = saldo;
+  elementoSaldo.textContent = saldo.toString();
 
   const novaTransacao = {
     tipoTransacao: tipoTransacao,
