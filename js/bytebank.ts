@@ -6,7 +6,7 @@ if (elementoSaldo){ // diferente de null
 }
 
 
-const elementoFormulario = document.querySelector(".block-nova-transacao form");
+const elementoFormulario = document.querySelector(".block-nova-transacao form") as HTMLFormElement;
 elementoFormulario.addEventListener ("submit", function(event) {
   event.preventDefault();
   if (!elementoFormulario.checkValidity()) {
@@ -41,3 +41,4 @@ elementoFormulario.addEventListener ("submit", function(event) {
 
   elementoFormulario.reset();
 })
+
