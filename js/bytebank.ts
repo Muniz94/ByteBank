@@ -14,9 +14,9 @@ elementoFormulario.addEventListener ("submit", function(event) {
     return;
   }
 
-  const inputTipoTransacao = elementoFormulario.querySelector('#tipoTransacao');
-  const inputValor = elementoFormulario.querySelector('#valor');
-  const inputData = elementoFormulario.querySelector('#data');
+  const inputTipoTransacao = elementoFormulario.querySelector('#tipoTransacao') as HTMLSelectElement;
+  const inputValor = elementoFormulario.querySelector('#valor') as HTMLInputElement;
+  const inputData = elementoFormulario.querySelector('#data') as HTMLInputElement;
 
   let tipoTransacao = inputTipoTransacao.value;
   let valor = inputValor.value; // os inputs.value são strings por isso deve-se converter
