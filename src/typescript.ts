@@ -16,8 +16,15 @@ type Transacao = {
   valor: number;
 }
 
+// Enum (serve para assegurar que não será inserido um valor diferente, sem acento por exemplo)
+enum TipoTransacao {
+  DEPOSITO = "Depósito",
+  TRANSFERENCIA = "Transferência",
+  PAGAMENTO_BOLETO = "Pagamento de Boleto"
+}
+
 const novaTransacao: Transacao = {
-  tipoTransacao: "Lucas",
+  tipoTransacao: TipoTransacao.PAGAMENTO_BOLETO,
   data: new Date(),
   valor: 10
 }
