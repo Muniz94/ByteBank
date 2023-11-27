@@ -25,7 +25,7 @@ elementoFormulario.addEventListener ("submit", function(event) {
 
   elementoSaldo.textContent = saldo.toString();
 
-  const novaTransacao = {
+  const novaTransacao: Transacao = {
     tipoTransacao: tipoTransacao,
     valor: valor,
     data: data

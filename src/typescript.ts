@@ -10,7 +10,7 @@ const lista = []; // pode receber qualquer coisa
 const num: number[] = []; // apenas números
 
 // Tipos Personalizados (Type Alias)
-type Transacao = {             
+type Transacao2 = {             
   tipoTransacao: string;     // Esse bloco define uma estrutura padrão para todo objeto do tipo 'Transacao'
   data: Date;
   valor: number;
