@@ -10,13 +10,13 @@ elementoFormulario.addEventListener ("submit", function(event) {
   const inputValor = elementoFormulario.querySelector('#valor') as HTMLInputElement;
   const inputData = elementoFormulario.querySelector('#data') as HTMLInputElement;
 
-  let tipoTransacao: string = inputTipoTransacao.value;
+  let tipoTransacao: TipoTransacao = inputTipoTransacao.value as TipoTransacao;
   let valor: number = inputValor.valueAsNumber; // os inputs.value são strings por isso deve-se converter
   let data: Date = new Date(inputData.value);
 
-  if (tipoTransacao == "Depósito") {
+  if (tipoTransacao == TipoTransacao.DEPOSITO) {
     saldo += valor; // aqui tem que converter para não concatenar ao invés de somar
-  } else if (tipoTransacao == "Transferência" || tipoTransacao == "Pagamento de Boleto") {
+  } else if (tipoTransacao == TipoTransacao.TRANSFERENCIA || tipoTransacao == TipoTransacao.PAGAMENTO_BOLETO) {
     saldo -= valor;
   } else {
     alert("Tipo de transação é inválido");
