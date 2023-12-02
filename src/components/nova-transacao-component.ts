@@ -19,15 +19,6 @@ elementoFormulario.addEventListener ("submit", function(event) {
   let data: Date = new Date(inputData.value);
   let saldo: number = getSaldo();
 
-  if (tipoTransacao == TipoTransacao.DEPOSITO) {
-    saldo += valor; // aqui tem que converter para não concatenar ao invés de somar
-  } else if (tipoTransacao == TipoTransacao.TRANSFERENCIA || tipoTransacao == TipoTransacao.PAGAMENTO_BOLETO) {
-    saldo -= valor;
-  } else {
-    alert("Tipo de transação é inválido");
-    return;
-  }
-
   atualizarSaldo(saldo)
 
   const novaTransacao: Transacao = {
