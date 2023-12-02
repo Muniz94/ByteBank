@@ -23,3 +23,5 @@ const Conta = {
     }
   }
 }
+
+export default Conta; // default não é obrigatório

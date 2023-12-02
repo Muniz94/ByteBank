@@ -1,6 +1,7 @@
 import { Transacao } from "../types/Transacao.js";
 import { TipoTransacao } from "../types/TipoTransacao.js";
 import { atualizarSaldo, getSaldo } from "./saldo-component.js";
+import Conta from "../types/Conta.js";
 
 const elementoFormulario = document.querySelector(".block-nova-transacao form") as HTMLFormElement;
 elementoFormulario.addEventListener ("submit", function(event) {
@@ -17,15 +18,14 @@ elementoFormulario.addEventListener ("submit", function(event) {
   let tipoTransacao: TipoTransacao = inputTipoTransacao.value as TipoTransacao;
   let valor: number = inputValor.valueAsNumber; // os inputs.value são strings por isso deve-se converter
   let data: Date = new Date(inputData.value);
-  let saldo: number = getSaldo();
-
-  atualizarSaldo(saldo)
 
   const novaTransacao: Transacao = {
     tipoTransacao: tipoTransacao,
     valor: valor,
     data: data,
   }
+
+  Conta.registrarTransacao(novaTransacao);
 
   elementoFormulario.reset();
 })
