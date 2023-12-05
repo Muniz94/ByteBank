@@ -18,8 +18,7 @@ const Conta = {
     } else if (novaTransacao.tipoTransacao == TipoTransacao.TRANSFERENCIA || novaTransacao.tipoTransacao == TipoTransacao.PAGAMENTO_BOLETO) {
       saldo -= novaTransacao.valor;
     } else {
-      alert("Tipo de transação é inválido");
-      return;
+      throw new Error("Tipo de transação é inválido");
     }
   }
 }
