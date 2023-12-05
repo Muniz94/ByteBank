@@ -1,5 +1,5 @@
-import { formatarMoeda } from "../utils/formatters";
-import Conta from "../types/Conta";
+import { formatarMoeda } from "../utils/formatters.js";
+import Conta from "../types/Conta.js";
 
 const elementoSaldo = document.querySelector(".saldo-valor .valor") as HTMLElement;
 
