@@ -41,8 +41,8 @@ const Conta = {
       throw new Error("Tipo de transação é inválido");
     }
 
-    //transacoes.push(novaTransacao);
-    //console.log(transacoes);
+    transacoes.push(novaTransacao);
+    console.log(transacoes);
   }
 }
 
