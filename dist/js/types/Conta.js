@@ -33,8 +33,8 @@ const Conta = {
         else {
             throw new Error("Tipo de transação é inválido");
         }
-        //transacoes.push(novaTransacao);
-        //console.log(transacoes);
+        transacoes.push(novaTransacao);
+        console.log(transacoes);
     }
 };
 export default Conta; // default não é obrigatório
