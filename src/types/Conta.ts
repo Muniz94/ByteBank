@@ -42,7 +42,7 @@ const Conta = {
     }
 
     transacoes.push(novaTransacao);
-    console.log(transacoes);
+    localStorage.setItem("transacoes", JSON.stringify(transacoes));
   }
 }
 
