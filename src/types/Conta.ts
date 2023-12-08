@@ -2,7 +2,14 @@ import { Transacao } from "./Transacao.js";
 import { TipoTransacao } from "./TipoTransacao.js";
 
 let saldo: number = 3000;
-const transacoes: Transacao[] = JSON.parse(localStorage.getItem('transacoes')) || [];
+const transacoes: Transacao[] = JSON.parse(localStorage.getItem('transacoes')
+, (key: string, value: string) => {
+  if (key === "data") {
+    return new Date(value);
+  }
+
+  return value;
+}) || [];
 
 function debitar(valor: number): void {
   if (valor <= 0){
