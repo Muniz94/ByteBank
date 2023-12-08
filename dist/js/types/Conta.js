@@ -34,7 +34,7 @@ const Conta = {
             throw new Error("Tipo de transação é inválido");
         }
         transacoes.push(novaTransacao);
-        console.log(transacoes);
+        localStorage.setItem("transacoes", JSON.stringify(transacoes));
     }
 };
 export default Conta; // default não é obrigatório
