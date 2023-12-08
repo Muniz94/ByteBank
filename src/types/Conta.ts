@@ -33,9 +33,9 @@ const Conta = {
 
   registrarTransacao(novaTransacao: Transacao): void {
     if (novaTransacao.tipoTransacao == TipoTransacao.DEPOSITO) {
-      saldo += novaTransacao.valor; // aqui tem que converter para não concatenar ao invés de somar
+      depositar(novaTransacao.valor);
     } else if (novaTransacao.tipoTransacao == TipoTransacao.TRANSFERENCIA || novaTransacao.tipoTransacao == TipoTransacao.PAGAMENTO_BOLETO) {
-      saldo -= novaTransacao.valor;
+      debitar(novaTransacao.valor)
     } else {
       throw new Error("Tipo de transação é inválido");
     }
