@@ -1,6 +1,11 @@
 import { TipoTransacao } from "./TipoTransacao.js";
 let saldo = 3000;
-const transacoes = JSON.parse(localStorage.getItem('transacoes')) || [];
+const transacoes = JSON.parse(localStorage.getItem('transacoes'), (key, value) => {
+    if (key === "data") {
+        return new Date(value);
+    }
+    return value;
+}) || [];
 function debitar(valor) {
     if (valor <= 0) {
         throw new Error("O valor a ser debitado deve ser maior que zero!");
