@@ -1,5 +1,6 @@
 import { TipoTransacao } from "./TipoTransacao.js";
 let saldo = 3000;
+const transacoes = JSON.parse(localStorage.getItem('transacoes')) || [];
 function debitar(valor) {
     if (valor <= 0) {
         throw new Error("O valor a ser debitado deve ser maior que zero!");
@@ -32,6 +33,8 @@ const Conta = {
         else {
             throw new Error("Tipo de transação é inválido");
         }
+        //transacoes.push(novaTransacao);
+        //console.log(transacoes);
     }
 };
 export default Conta; // default não é obrigatório
