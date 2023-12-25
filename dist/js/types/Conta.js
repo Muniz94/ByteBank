@@ -1,5 +1,5 @@
 import { TipoTransacao } from "./TipoTransacao.js";
-let saldo = 3000;
+let saldo = JSON.parse(localStorage.getItem('saldo')) || 0;
 const transacoes = JSON.parse(localStorage.getItem('transacoes'), (key, value) => {
     if (key === "data") {
         return new Date(value);
