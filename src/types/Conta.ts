@@ -20,6 +20,7 @@ function debitar(valor: number): void {
   }
 
   saldo -= valor;
+  localStorage.setItem("saldo", saldo.toString()); // tem que usar toString() pois saldo é um valor numérico
 }
 
 function depositar(valor: number): void {
@@ -28,6 +29,7 @@ function depositar(valor: number): void {
   }
 
   saldo += valor;
+  localStorage.setItem("saldo", saldo.toString());
 }
 
 const Conta = {
