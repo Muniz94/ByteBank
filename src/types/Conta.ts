@@ -1,5 +1,6 @@
 import { Transacao } from "./Transacao.js";
 import { TipoTransacao } from "./TipoTransacao.js";
+import { GrupoTransacao } from "./GrupoTransacao.js";
 
 let saldo: number = JSON.parse(localStorage.getItem('saldo')) || 0;
 const transacoes: Transacao[] = JSON.parse(localStorage.getItem('transacoes')
@@ -39,6 +40,11 @@ const Conta = {
 
   getDataAcesso(): Date {
     return new Date();
+  },
+
+  getGruposTransacoes(): GrupoTransacao[] {
+    const gruposTransacoes: GrupoTransacao[] = [];
+    const listaTransacoes: Transacao[] = structuredClone(transacoes); // structuredClone literalmente cria um clone (transações no caso)
   },
 
   registrarTransacao(novaTransacao: Transacao): void {
