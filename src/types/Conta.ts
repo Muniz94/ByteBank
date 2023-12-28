@@ -47,6 +47,10 @@ const Conta = {
     const listaTransacoes: Transacao[] = structuredClone(transacoes); // structuredClone literalmente cria um clone (transações no caso)
     const transacoesOrdenadas: Transacao[] = listaTransacoes.sort((t1, t2) => t2.data.getTime() - t1.data.getTime()); // t2 - t1 (decrescente) //// t1 - t2 (crescente)
     let labelAtualGrupoTransacao: string = ""; // nome do Grupo de transações
+
+    for (let transacao of transacoesOrdenadas) {
+      
+    }
   },
 
   registrarTransacao(novaTransacao: Transacao): void {
