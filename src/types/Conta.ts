@@ -50,6 +50,13 @@ const Conta = {
 
     for (let transacao of transacoesOrdenadas) {
       let labelGrupoTransacao: string = transacao.data.toLocaleDateString('pt-br', { month: 'long', year: 'numeric' });
+      if (labelAtualGrupoTransacao != labelGrupoTransacao) {
+        labelAtualGrupoTransacao = labelGrupoTransacao;
+        gruposTransacoes.push({
+          label: labelGrupoTransacao,
+          transacoes: [],
+        })
+      }
     }
   },
 
