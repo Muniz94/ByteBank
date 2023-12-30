@@ -57,6 +57,7 @@ const Conta = {
           transacoes: [],
         })
       }
+      gruposTransacoes.at(-1).transacoes.push(transacao);
     }
   },
 
