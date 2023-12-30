@@ -4,19 +4,19 @@ import { GrupoTransacao } from "./GrupoTransacao.js";
 
 let saldo: number = JSON.parse(localStorage.getItem('saldo')) || 0;
 const transacoes: Transacao[] = JSON.parse(localStorage.getItem('transacoes')
-, (key: string, value: string) => {
-  if (key === "data") {
-    return new Date(value);
-  }
+  , (key: string, value: string) => {
+    if (key === "data") {
+      return new Date(value);
+    }
 
-  return value;
-}) || [];
+    return value;
+  }) || [];
 
 function debitar(valor: number): void {
-  if (valor <= 0){
+  if (valor <= 0) {
     throw new Error("O valor a ser debitado deve ser maior que zero!");
   }
-  if (valor > saldo){
+  if (valor > saldo) {
     throw new Error("Saldo insuficiente!");
   }
 
@@ -25,7 +25,7 @@ function debitar(valor: number): void {
 }
 
 function depositar(valor: number): void {
-  if (valor <= 0){
+  if (valor <= 0) {
     throw new Error("O valor a ser depositado deve ser maior que zero!");
   }
 
@@ -59,6 +59,8 @@ const Conta = {
       }
       gruposTransacoes.at(-1).transacoes.push(transacao);
     }
+
+    return gruposTransacoes;
   },
 
   registrarTransacao(novaTransacao: Transacao): void {
