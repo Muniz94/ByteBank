@@ -73,6 +73,7 @@ const Conta = {
     }
 
     transacoes.push(novaTransacao);
+    console.log(this.getGruposTransacoes());
     localStorage.setItem("transacoes", JSON.stringify(transacoes));
   }
 }

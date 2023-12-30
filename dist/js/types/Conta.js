@@ -59,6 +59,7 @@ const Conta = {
             throw new Error("Tipo de transação é inválido");
         }
         transacoes.push(novaTransacao);
+        console.log(this.getGruposTransacoes());
         localStorage.setItem("transacoes", JSON.stringify(transacoes));
     }
 };
