@@ -37,7 +37,7 @@ const Conta = {
         let labelAtualGrupoTransacao = ""; // nome do Grupo de transações
         for (let transacao of transacoesOrdenadas) {
             let labelGrupoTransacao = transacao.data.toLocaleDateString('pt-br', { month: 'long', year: 'numeric' });
-            if (labelAtualGrupoTransacao != labelGrupoTransacao) {
+            if (labelAtualGrupoTransacao !== labelGrupoTransacao) {
                 labelAtualGrupoTransacao = labelGrupoTransacao;
                 gruposTransacoes.push({
                     label: labelGrupoTransacao,
