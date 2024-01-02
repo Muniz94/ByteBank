@@ -1,4 +1,6 @@
 import Conta from "../types/Conta.js";
+import { FormatoData } from "../types/FormatoData";
+import { formatarData, formatarMoeda } from "../utils/formatters";
 const elementoRegistroTransacoesExtrato = document.querySelector(".extrato .registro-transacoes");
 function renderizarExtrato() {
     const gruposTransacoes = Conta.getGruposTransacoes();
@@ -11,9 +13,9 @@ function renderizarExtrato() {
             htmlTransacaoItem += `<div class="transacao-item"> 
       <div class="transacao-info">
           <span class="tipo">${transacao.tipoTransacao}</span>
-          <strong class="valor">-R$ 36,00</strong>
+          <strong class="valor">${formatarMoeda(transacao.valor)}</strong>
       </div>
-      <time class="data">04/09</time>
+      <time class="data">${formatarData(transacao.data, FormatoData.DIA_MES)}</time>
       </div>`; // monta a estrutura de um item de transação
         }
     }
