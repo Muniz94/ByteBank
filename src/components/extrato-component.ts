@@ -30,4 +30,6 @@ function renderizarExtrato(): void {
     </div>
   `
   }
+
+  elementoRegistroTransacoesExtrato.innerHTML = htmlRegistroTransacoes;
 }
