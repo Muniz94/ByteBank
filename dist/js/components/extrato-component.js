@@ -25,4 +25,5 @@ function renderizarExtrato() {
     </div>
   `;
     }
+    elementoRegistroTransacoesExtrato.innerHTML = htmlRegistroTransacoes;
 }
