@@ -31,5 +31,9 @@ function renderizarExtrato(): void {
   `
   }
 
+  if (htmlRegistroTransacoes === '') {
+    htmlRegistroTransacoes = '<div>Não há transações registradas.</div>'
+  }
+
   elementoRegistroTransacoesExtrato.innerHTML = htmlRegistroTransacoes;
 }
