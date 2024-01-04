@@ -5,6 +5,7 @@ import { formatarData, formatarMoeda } from "../utils/formatters.js";
 
 const elementoRegistroTransacoesExtrato: HTMLElement = document.querySelector(".extrato .registro-transacoes");
 
+renderizarExtrato();
 function renderizarExtrato(): void {
   const gruposTransacoes: GrupoTransacao[] = Conta.getGruposTransacoes();
   elementoRegistroTransacoesExtrato.innerHTML = ""; // limpa o elemento para renderizar novamente (atualizado)
