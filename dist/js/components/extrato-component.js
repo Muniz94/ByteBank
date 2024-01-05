@@ -32,7 +32,7 @@ function renderizarExtrato() {
     elementoRegistroTransacoesExtrato.innerHTML = htmlRegistroTransacoes;
 }
 const ExtratoComponent = {
-    atualizar() {
+    atualizar: function () {
         renderizarExtrato();
     }
 };

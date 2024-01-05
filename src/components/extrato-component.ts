@@ -40,7 +40,7 @@ function renderizarExtrato(): void {
 }
 
 const ExtratoComponent = {
-  atualizar(): void {
+  atualizar: function () {
     renderizarExtrato();
   }
 }
