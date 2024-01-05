@@ -14,7 +14,7 @@ elementoFormulario.addEventListener("submit", function (event) {
         const inputData = elementoFormulario.querySelector('#data');
         let tipoTransacao = inputTipoTransacao.value;
         let valor = inputValor.valueAsNumber; // os inputs.value são strings por isso deve-se converter
-        let data = new Date(inputData.value);
+        let data = new Date(inputData.value + " 00:00:00"); // para corrigir o bug de 1 dia a menos
         const novaTransacao = {
             tipoTransacao: tipoTransacao,
             valor: valor,
