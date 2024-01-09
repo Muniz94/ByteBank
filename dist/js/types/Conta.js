@@ -30,6 +30,28 @@ const Conta = {
     getDataAcesso() {
         return new Date();
     },
+    agruparTransacoes() {
+        const resumo = {
+            totalDepositos: 0,
+            totalTransferencias: 0,
+            totalPagamentosBoleto: 0
+        };
+        transacoes.forEach(transacao => {
+            console.log(transacao);
+            switch (transacao.tipoTransacao) {
+                case TipoTransacao.DEPOSITO:
+                    resumo.totalDepositos += transacao.valor;
+                    break;
+                case TipoTransacao.PAGAMENTO_BOLETO:
+                    resumo.totalPagamentosBoleto += transacao.valor;
+                    break;
+                case TipoTransacao.TRANSFERENCIA:
+                    resumo.totalTransferencias += transacao.valor;
+                    break;
+            }
+        });
+        return resumo;
+    },
     getGruposTransacoes() {
         const gruposTransacoes = [];
         const listaTransacoes = structuredClone(transacoes); // structuredClone literalmente cria um clone (transações no caso)
@@ -62,6 +84,7 @@ const Conta = {
         transacoes.push(novaTransacao);
         console.log(this.getGruposTransacoes());
         localStorage.setItem("transacoes", JSON.stringify(transacoes));
+        console.log(this.agruparTransacoes());
     }
 };
 export default Conta; // default não é obrigatório
